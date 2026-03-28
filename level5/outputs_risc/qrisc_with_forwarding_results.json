@@ -1,0 +1,70 @@
+{
+  "program": "qrisc_with_forwarding",
+  "architecture": "Q-RISC++ v2 (RISC-V inspired quantum processor)",
+  "pipeline_stages": [
+    "IF",
+    "ID",
+    "EX",
+    "WB"
+  ],
+  "forwarding": true,
+  "topology": "linear chain (4 qubits)",
+  "metrics": {
+    "total_cycles": 23,
+    "instructions_issued": 16,
+    "CPI": 1.438,
+    "stalls": 4,
+    "forwards_bypassed": 10,
+    "fidelity_pct": 93.6,
+    "noise_degradation_pct": 6.4,
+    "shots": 4096
+  },
+  "noise_model": "IBM Eagle r3 approximation",
+  "hazard_log": [
+    {
+      "cycle": 12,
+      "type": "RAW",
+      "reason": "RAW(no-fwd): QR0 measured @PC9, read by H@PC10",
+      "instr": "H        QR0"
+    },
+    {
+      "cycle": 13,
+      "type": "RAW",
+      "reason": "RAW(no-fwd): QR0 measured @PC9, read by H@PC10",
+      "instr": "H        QR0"
+    },
+    {
+      "cycle": 16,
+      "type": "CONTROL",
+      "reason": "CONTROL: FEEDBACK@PC12 needs CR1 from MEASURE@PC11",
+      "instr": "FEEDBACK QR2 \u2190 CR1"
+    },
+    {
+      "cycle": 17,
+      "type": "CONTROL",
+      "reason": "CONTROL: FEEDBACK@PC12 needs CR1 from MEASURE@PC11",
+      "instr": "FEEDBACK QR2 \u2190 CR1"
+    }
+  ],
+  "counts_ideal": {
+    "0000": 2018,
+    "1101": 2078
+  },
+  "counts_noisy": {
+    "1101": 1748,
+    "0000": 1842,
+    "1010": 24,
+    "0001": 104,
+    "1001": 55,
+    "0101": 62,
+    "0110": 43,
+    "1011": 37,
+    "0111": 35,
+    "1100": 74,
+    "1000": 29,
+    "0011": 3,
+    "0100": 38,
+    "0010": 1,
+    "1111": 1
+  }
+}

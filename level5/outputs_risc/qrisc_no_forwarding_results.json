@@ -1,0 +1,191 @@
+{
+  "program": "qrisc_no_forwarding",
+  "architecture": "Q-RISC++ v2 (RISC-V inspired quantum processor)",
+  "pipeline_stages": [
+    "IF",
+    "ID",
+    "EX",
+    "WB"
+  ],
+  "forwarding": false,
+  "topology": "linear chain (4 qubits)",
+  "metrics": {
+    "total_cycles": 43,
+    "instructions_issued": 16,
+    "CPI": 2.688,
+    "stalls": 24,
+    "forwards_bypassed": 0,
+    "fidelity_pct": 93.61,
+    "noise_degradation_pct": 6.39,
+    "shots": 4096
+  },
+  "noise_model": "IBM Eagle r3 approximation",
+  "hazard_log": [
+    {
+      "cycle": 3,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by H@PC0, read by CNOT@PC1",
+      "instr": "CNOT     QR0, QR1"
+    },
+    {
+      "cycle": 4,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by H@PC0, read by CNOT@PC1",
+      "instr": "CNOT     QR0, QR1"
+    },
+    {
+      "cycle": 6,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by CNOT@PC1, read by CNOT@PC2",
+      "instr": "CNOT     QR0, QR1"
+    },
+    {
+      "cycle": 7,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by CNOT@PC1, read by CNOT@PC2",
+      "instr": "CNOT     QR0, QR1"
+    },
+    {
+      "cycle": 9,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by CNOT@PC2, read by CNOT@PC3",
+      "instr": "CNOT     QR1, QR0"
+    },
+    {
+      "cycle": 10,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by CNOT@PC2, read by CNOT@PC3",
+      "instr": "CNOT     QR1, QR0"
+    },
+    {
+      "cycle": 12,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by CNOT@PC3, read by CNOT@PC4",
+      "instr": "CNOT     QR0, QR1"
+    },
+    {
+      "cycle": 13,
+      "type": "RAW",
+      "reason": "RAW: QR0 written by CNOT@PC3, read by CNOT@PC4",
+      "instr": "CNOT     QR0, QR1"
+    },
+    {
+      "cycle": 15,
+      "type": "RAW",
+      "reason": "RAW: QR1 written by CNOT@PC4, read by CNOT@PC5",
+      "instr": "CNOT     QR1, QR2"
+    },
+    {
+      "cycle": 16,
+      "type": "RAW",
+      "reason": "RAW: QR1 written by CNOT@PC4, read by CNOT@PC5",
+      "instr": "CNOT     QR1, QR2"
+    },
+    {
+      "cycle": 18,
+      "type": "RAW",
+      "reason": "RAW: QR1 written by CNOT@PC5, read by CNOT@PC6",
+      "instr": "CNOT     QR2, QR1"
+    },
+    {
+      "cycle": 19,
+      "type": "RAW",
+      "reason": "RAW: QR1 written by CNOT@PC5, read by CNOT@PC6",
+      "instr": "CNOT     QR2, QR1"
+    },
+    {
+      "cycle": 21,
+      "type": "RAW",
+      "reason": "RAW: QR1 written by CNOT@PC6, read by CNOT@PC7",
+      "instr": "CNOT     QR1, QR2"
+    },
+    {
+      "cycle": 22,
+      "type": "RAW",
+      "reason": "RAW: QR1 written by CNOT@PC6, read by CNOT@PC7",
+      "instr": "CNOT     QR1, QR2"
+    },
+    {
+      "cycle": 24,
+      "type": "RAW",
+      "reason": "RAW: QR2 written by CNOT@PC7, read by CNOT@PC8",
+      "instr": "CNOT     QR2, QR3"
+    },
+    {
+      "cycle": 25,
+      "type": "RAW",
+      "reason": "RAW: QR2 written by CNOT@PC7, read by CNOT@PC8",
+      "instr": "CNOT     QR2, QR3"
+    },
+    {
+      "cycle": 28,
+      "type": "RAW",
+      "reason": "RAW(no-fwd): QR0 measured @PC9, read by H@PC10",
+      "instr": "H        QR0"
+    },
+    {
+      "cycle": 29,
+      "type": "RAW",
+      "reason": "RAW(no-fwd): QR0 measured @PC9, read by H@PC10",
+      "instr": "H        QR0"
+    },
+    {
+      "cycle": 32,
+      "type": "CONTROL",
+      "reason": "CONTROL: FEEDBACK@PC12 needs CR1 from MEASURE@PC11",
+      "instr": "FEEDBACK QR2 \u2190 CR1"
+    },
+    {
+      "cycle": 33,
+      "type": "CONTROL",
+      "reason": "CONTROL: FEEDBACK@PC12 needs CR1 from MEASURE@PC11",
+      "instr": "FEEDBACK QR2 \u2190 CR1"
+    },
+    {
+      "cycle": 35,
+      "type": "RAW",
+      "reason": "RAW: QR2 written by FEEDBACK@PC12, read by MEASURE@PC13",
+      "instr": "MEASURE  QR2 \u2192 CR2"
+    },
+    {
+      "cycle": 36,
+      "type": "RAW",
+      "reason": "RAW: QR2 written by FEEDBACK@PC12, read by MEASURE@PC13",
+      "instr": "MEASURE  QR2 \u2192 CR2"
+    },
+    {
+      "cycle": 39,
+      "type": "RAW",
+      "reason": "RAW: QR3 written by RZ@PC14, read by MEASURE@PC15",
+      "instr": "MEASURE  QR3 \u2192 CR3"
+    },
+    {
+      "cycle": 40,
+      "type": "RAW",
+      "reason": "RAW: QR3 written by RZ@PC14, read by MEASURE@PC15",
+      "instr": "MEASURE  QR3 \u2192 CR3"
+    }
+  ],
+  "counts_ideal": {
+    "1101": 2073,
+    "0000": 2023
+  },
+  "counts_noisy": {
+    "1001": 43,
+    "0001": 115,
+    "0100": 34,
+    "1101": 1770,
+    "0000": 1820,
+    "0010": 4,
+    "1100": 80,
+    "0101": 46,
+    "1000": 37,
+    "1011": 61,
+    "1111": 2,
+    "1010": 16,
+    "0110": 41,
+    "0111": 23,
+    "0011": 3,
+    "1110": 1
+  }
+}
