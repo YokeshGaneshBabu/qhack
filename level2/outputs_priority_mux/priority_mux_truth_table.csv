@@ -1,0 +1,17 @@
+I0_Fire,I1_Gas,I2_Intrusion,I3_Medical,Exp_S1,Exp_S0,Winner,Expected_Y,Got_Y,Pass
+0,0,0,0,1,1,Intrusion,0,0,True
+1,0,0,0,0,1,Fire,1,1,True
+0,1,0,0,1,0,Gas,1,1,True
+1,1,0,0,0,1,Fire,1,1,True
+0,0,1,0,1,1,Intrusion,1,1,True
+1,0,1,0,0,1,Fire,1,1,True
+0,1,1,0,1,0,Gas,1,1,True
+1,1,1,0,0,1,Fire,1,1,True
+0,0,0,1,0,0,Medical,1,1,True
+1,0,0,1,0,0,Medical,1,1,True
+0,1,0,1,0,0,Medical,1,1,True
+1,1,0,1,0,0,Medical,1,1,True
+0,0,1,1,0,0,Medical,1,1,True
+1,0,1,1,0,0,Medical,1,1,True
+0,1,1,1,0,0,Medical,1,1,True
+1,1,1,1,0,0,Medical,1,1,True
