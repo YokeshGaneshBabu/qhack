@@ -13,13 +13,22 @@ Demonstrates all Level-5 requirements:
   ✓ CPI metric, fidelity score, pipeline diagram
 """
 
-import math
+import math, os
 from qrisc_pipeline import QRISCPipeline
+from qrisc_arch_diagram import save_architecture_diagram
+
+OUTPUT_DIR = r"C:\Users\Yokesh G\qiskit-project\outputs_risc"
 
 print("=" * 68)
 print("  Q-RISC++ QUANTUM PROCESSOR  —  v2.0")
 print("  A RISC-V Inspired Quantum CPU Architecture")
 print("=" * 68)
+
+# ── Architecture diagram (shows all components + data flows) ──────────────────
+import os; os.makedirs(OUTPUT_DIR, exist_ok=True)
+arch_path = os.path.join(OUTPUT_DIR, "qrisc_architecture.png")
+save_architecture_diagram(arch_path)
+print(f"  💾 Architecture diagram → {arch_path}")
 
 # ══════════════════════════════════════════════════════════════════════════════
 #  PROGRAM: Written in Q-RISC++ assembly (as dicts, like writing .s files)
